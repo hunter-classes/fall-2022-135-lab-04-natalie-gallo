@@ -7,10 +7,14 @@
 
 std::string box(int width, int height){
 
-  for (int i = 0; i == height; i++){
-    for (int i = 0; i == width; i++){
+  int w = width;
+  int h = height;
+
+  for (int i = 0; i < h; i++) {
+    for (int i = 0; i < w; i++) {
       std::cout << "*";
     }
+    std::cout << std::endl;
   }
 
   return 0;
