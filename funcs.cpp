@@ -27,21 +27,36 @@ std::string checkerboard(int width, int height){
   std::string star = "*";
   std::string space = " ";
 
+  //make a checkerboard with height rows and width columns
+  //iterating row by row
+
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
 
-      if (row % 2 != 0) {
-        std::cout << space;
-        if (row < height) {
+      // row/col
+      //if odd/odd or even/even, star
+      //if odd/even or even/odd, space
+
+      if (row % 2 != 0 && col % 2 != 0) {
+        if (row < height){
           std::cout << star;
         }
-      } else if (row % 2 == 0) {
-        std::cout << star;
-        if (row < height) {
+      } else if (row % 2 != 0 && col % 2 == 0) {
+        if (row < height){
+          std::cout << space;
+        }
+      } else if (row % 2 == 0 && col % 2 == 0){
+        if (row < height){
+          std::cout << star;
+        }
+      } else if (row % 2 == 0 && col % 2 != 0){
+        if (row < height){
           std::cout << space;
         }
       }
     }
+    //after each row iteration, go to next line
+    std::cout << std::endl;
   }
   return 0;
 }
