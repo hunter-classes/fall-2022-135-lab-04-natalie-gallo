@@ -24,25 +24,26 @@ std::string box(int width, int height){
 
 std::string checkerboard(int width, int height){
 
+  std::string star = "*";
+  std::string space = " ";
+
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
 
-      bool start = false;
-
-      //if odd, print on one line (no space to start)
-      //if even, print on the following line (space to start)
-      
-      if (row % 2 == 0) {
-	start = true;
-	while (start) {
-          std::cout << " *";
+      if (row % 2 != 0) {
+        std::cout << space;
+        if (row < height) {
+          std::cout << star;
         }
-      } else if (row % 2 != 0) {
-        std::cout << "* ";
+      } else if (row % 2 == 0) {
+        std::cout << star;
+        if (row < height) {
+          std::cout << space;
+        }
       }
-    
     }
   }
   return 0;
 }
+
   
