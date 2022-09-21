@@ -61,4 +61,29 @@ std::string checkerboard(int width, int height){
   return 0;
 }
 
+//TASK C
+
+std::string cross(int size){
+  
+  std::string star = "*";
+  std::string space = " ";
+
+   for (int row = 0; row < size; row++) {
+    for (int col = 0; col < size; col++) {
+
+      if (row == col){
+	std::cout << star;
+      } else {
+	std::cout << " ";
+      }
+    }
+    std::cout << std::endl;
+   }
+   return 0;
+}
+    
+
+      
+  
+
   
