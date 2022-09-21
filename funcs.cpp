@@ -68,8 +68,11 @@ std::string cross(int size){
   std::string star = "*";
   std::string space = " ";
 
-  for (int row = 0; row < size; row++) {
-    for (int col = 0; col < size; col++) {
+  for (int row = 1; row <= size; row++) {
+    for (int col = 1; col <= size; col++) {
+
+      //if row == col, print star
+      //diagonal: size - row = col --> (row, col)
 
       if (row == col || col == (size + 1 - row)){
 	std::cout << star;
@@ -78,10 +81,13 @@ std::string cross(int size){
 	std::cout << space;
       }
     }
+    //When reach end of row size, go to next row
     std::cout << std::endl;
    }
    return 0;
 }
+
+
   
 
   
