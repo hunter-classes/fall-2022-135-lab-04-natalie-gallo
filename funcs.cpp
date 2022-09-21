@@ -94,9 +94,9 @@ std::string lower(int length){
   std::string star = "*";
   std::string space = " ";
 
-  for (int row = 0; row <= length; row++) {
-    for (int col = 0; col <= length; col++) {
-      if (col < row){
+  for (int row = 0; row < length; row++) {
+    for (int col = 0; col < length; col++) {
+      if (col <= row){
 	std::cout << star;
       }
       else {
