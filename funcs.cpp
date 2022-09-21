@@ -68,22 +68,20 @@ std::string cross(int size){
   std::string star = "*";
   std::string space = " ";
 
-   for (int row = 0; row < size; row++) {
+  for (int row = 0; row < size; row++) {
     for (int col = 0; col < size; col++) {
 
-      if (row == col){
+      if (row == col || col == (size + 1 - row)){
 	std::cout << star;
-      } else {
-	std::cout << " ";
+      }
+      else {
+	std::cout << space;
       }
     }
     std::cout << std::endl;
    }
    return 0;
 }
-    
-
-      
   
 
   
