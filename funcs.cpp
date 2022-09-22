@@ -143,12 +143,19 @@ std::string trapezoid(int width, int height){
   }
 
   if (start) {
+    
+    int spaces = 0;
+    int stars = width;
 
-    for (int row = 0; row < height; row++) {
-      for (int col = 0; col < width; col++) {
-
-      
+    for (int row = 0; row < height; row++){
+      for (int i = 0; i < spaces; i++){
+          std::cout << " ";
       }
+      for (int col = 0; col < stars; col++){
+          std::cout << "*";
+      }
+      stars = stars - 2;
+      spaces = spaces + 1;
       std::cout << std::endl;
     }
   }
