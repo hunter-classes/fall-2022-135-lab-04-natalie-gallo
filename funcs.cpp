@@ -7,17 +7,16 @@
 
 std::string box(int width, int height){
 
-  int w = width;
-  int h = height;
+  std::string output = "";
 
-  for (int i = 0; i < h; i++) {
-    for (int i = 0; i < w; i++) {
-      std::cout << "*";
+  for (int row = 0; row < height; row++) {
+    for (int col = 0; col < width; col++) {
+      output = output + "*";
     }
-    std::cout << std::endl;
+    output = output + " \n";
   }
 
-  return 0;
+  return output;
 }
 
 //TASK B
@@ -26,6 +25,8 @@ std::string checkerboard(int width, int height){
 
   std::string star = "*";
   std::string space = " ";
+
+   std::string output = "";
 
   //make a checkerboard with height rows and width columns
   //iterating row by row
@@ -39,26 +40,26 @@ std::string checkerboard(int width, int height){
 
       if (row % 2 != 0 && col % 2 != 0) {
         if (row < height){
-          std::cout << star;
+          output += star;
         }
       } else if (row % 2 != 0 && col % 2 == 0) {
         if (row < height){
-          std::cout << space;
+          output += space;
         }
       } else if (row % 2 == 0 && col % 2 == 0){
         if (row < height){
-          std::cout << star;
+          output += star;
         }
       } else if (row % 2 == 0 && col % 2 != 0){
         if (row < height){
-          std::cout << space;
+          output += space;
         }
       }
     }
     //after each row iteration, go to next line
-    std::cout << std::endl;
+    output += "\n";
   }
-  return 0;
+  return output;
 }
 
 //TASK C
@@ -67,6 +68,8 @@ std::string cross(int size){
   
   std::string star = "*";
   std::string space = " ";
+  std::string output = "";
+
 
   for (int row = 1; row <= size; row++) {
     for (int col = 1; col <= size; col++) {
@@ -75,21 +78,23 @@ std::string cross(int size){
       //diagonal: size - row = col --> (row, col)
 
       if (row == col || col == (size + 1 - row)){
-	std::cout << star;
+        output += star;
       }
       else {
-	std::cout << space;
+        output += space;
       }
     }
     //When reach end of row size, go to next row
-    std::cout << std::endl;
+    output += "\n";
    }
-   return 0;
+   return output;
 }
 
 //TASK D
 
 std::string lower(int length){
+
+  std::string output = "";
 
   std::string star = "*";
   std::string space = " ";
@@ -97,15 +102,15 @@ std::string lower(int length){
   for (int row = 0; row < length; row++) {
     for (int col = 0; col < length; col++) {
       if (col <= row){
-	std::cout << star;
+        output += star;
       }
       else {
-	std::cout << space;
+        output += space;
       }
     }
-    std::cout << std::endl;
+    output += "\n";
   }
-  return 0;
+  return output;
 }
 
 //TASK E
@@ -114,29 +119,32 @@ std::string upper(int length){
 
   std::string star = "*";
   std::string space = " ";
+  std::string output = "";
 
   for (int row = 0; row < length; row++) {
     for (int col = 0; col < length; col++) {
       if (col >= row){
-	std::cout << star;
+        output += star;
       }
       else {
-	std::cout << space;
+        output += space;
       }
     }
-    std::cout << std::endl;
+    output += "\n";
   }
-  return 0;
+  return output;
 }
 
 //TASK F
 
 std::string trapezoid(int width, int height){
 
+  std::string output = "";
+
   bool start = false;
 
   if (height > width/2 || height <= 0){
-    cout << "Impossible Shape!";
+    std::cout << "Impossible Shape!";
     start = false;
   } else {
       start = true;
@@ -149,19 +157,25 @@ std::string trapezoid(int width, int height){
 
     for (int row = 0; row < height; row++){
       for (int i = 0; i < spaces; i++){
-          std::cout << " ";
+	output += " ";
       }
       for (int col = 0; col < stars; col++){
-          std::cout << "*";
+	output += "*";
       }
       stars = stars - 2;
       spaces = spaces + 1;
-      std::cout << std::endl;
+      output += "\n";
     }
   }
-  return 0;
+  return output;
 }
 
+//TASK G
+
+//std:string checkerboard3x3(int width, int height){
+
+  
+					       
       
 
   
