@@ -172,7 +172,35 @@ std::string trapezoid(int width, int height){
 
 //TASK G
 
-//std:string checkerboard3x3(int width, int height){
+std:string checkerboard3x3(int width, int height){
+
+  bool print = false;
+  
+  for (int row = 0; row < height; row++) {
+    if (row % 3 == 0){
+      print = true;
+    }
+
+    if (print){
+      for (int i = row; i <= row - 3; i--){
+        std::cout << "*";
+      }
+    }
+    for (int col = 0; col < width; col++){
+      std::cout << "*";
+      if (col % 3 == 0){
+        for (int j = col; j <= col - 3; j--){
+          std::cout << "*";
+        }
+      } else {
+        std::cout << " ";
+      }
+    }
+    std::cout << std::endl;
+  }
+
+  return 0;
+}
 
   
 					       
