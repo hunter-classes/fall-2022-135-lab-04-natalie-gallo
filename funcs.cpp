@@ -108,6 +108,8 @@ std::string lower(int length){
   return 0;
 }
 
+//TASK E
+
 std::string upper(int length){
 
   std::string star = "*";
@@ -126,6 +128,36 @@ std::string upper(int length){
   }
   return 0;
 }
+
+//TASK F
+
+std::string trapezoid(int width, int height){
+
+  bool start = false;
+
+  if (height > width/2 || height <= 0){
+    cout << "Impossible Shape!";
+    start = false;
+  } else {
+      start = true;
+  }
+
+  if (start) {
+
+    for (int row = 0; row < height; row++) {
+      for (int col = 0; col < width; col++) {
+
+      
+      }
+      std::cout << std::endl;
+    }
+  }
+  return 0;
+}
+
+      
+
+  
   
 
   
