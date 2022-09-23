@@ -172,41 +172,56 @@ std::string trapezoid(int width, int height){
 
 //TASK G
 
-std:string checkerboard3x3(int width, int height){
-
-  bool print = false;
+std::string checkerboard3x3(int width, int height){
   
-  for (int row = 0; row < height; row++) {
-    if (row % 3 == 0){
+  bool print = true;
+  int counter = 0;
+  int change = 0; 
+  std::string star = "*";
+  std::string space = " ";
+  std::string output = "";
+
+  for(int row = 0; row < height; row++){
+    for(int col = 0; col < width; col++){
+      //will print stars 3x, when 3 done -> print false and counter resets to 0
+      if(print){
+	output = output + star;
+      } else {
+	output = output + space;
+      }
+
+      counter = counter + 1;
+
+      if(counter == 3){
+	counter = 0;
+	if(print){
+	  print = false;
+	} else {
+	  print = true;
+	}
+      }
+    }
+
+    output = output + "\n";
+    counter = 0;
+
+    if(print){
+      print = false;
+    } else {
       print = true;
     }
 
-    if (print){
-      for (int i = row; i <= row - 3; i--){
-        std::cout << "*";
-      }
+    if(row % 3 == 2){
+      change = change + 1;
     }
-    for (int col = 0; col < width; col++){
-      std::cout << "*";
-      if (col % 3 == 0){
-        for (int j = col; j <= col - 3; j--){
-          std::cout << "*";
-        }
-      } else {
-        std::cout << " ";
-      }
+
+    if(change % 2 !=0){
+      star = " ";
+      space = "*";
+    } else {
+      star = "*";
+      space = " ";
     }
-    std::cout << std::endl;
   }
-
-  return 0;
+  return output;
 }
-
-  
-					       
-      
-
-  
-  
-
-  
